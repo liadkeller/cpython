@@ -832,6 +832,11 @@ code, or when embedding the Python interpreter:
    interpreter they belong.
 
 
+.. c:var:: PyTypeObject PyInterpreterId
+
+   This instance of :c:type:`PyTypeObject` represents the identifier object of a Python interpreter.
+
+
 .. c:type:: PyThreadState
 
    This data structure represents the state of a single thread.  The only public
