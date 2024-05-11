@@ -47,6 +47,66 @@
 #include "frozen_modules/abc.h"
 #include "frozen_modules/codecs.h"
 #include "frozen_modules/io.h"
+#include "frozen_modules/encodings.h"
+#include "frozen_modules/encodings.aliases.h"
+#include "frozen_modules/encodings.ascii.h"
+#include "frozen_modules/encodings.base64_codec.h"
+#include "frozen_modules/encodings.big5.h"
+#include "frozen_modules/encodings.big5hkscs.h"
+#include "frozen_modules/encodings.bz2_codec.h"
+#include "frozen_modules/encodings.charmap.h"
+#include "frozen_modules/encodings.euc_jis_2004.h"
+#include "frozen_modules/encodings.euc_jisx0213.h"
+#include "frozen_modules/encodings.euc_jp.h"
+#include "frozen_modules/encodings.euc_kr.h"
+#include "frozen_modules/encodings.gb18030.h"
+#include "frozen_modules/encodings.gb2312.h"
+#include "frozen_modules/encodings.gbk.h"
+#include "frozen_modules/encodings.hex_codec.h"
+#include "frozen_modules/encodings.hp_roman8.h"
+#include "frozen_modules/encodings.hz.h"
+#include "frozen_modules/encodings.idna.h"
+#include "frozen_modules/encodings.johab.h"
+#include "frozen_modules/encodings.koi8_r.h"
+#include "frozen_modules/encodings.koi8_t.h"
+#include "frozen_modules/encodings.koi8_u.h"
+#include "frozen_modules/encodings.kz1048.h"
+#include "frozen_modules/encodings.latin_1.h"
+#include "frozen_modules/encodings.mac_arabic.h"
+#include "frozen_modules/encodings.mac_croatian.h"
+#include "frozen_modules/encodings.mac_cyrillic.h"
+#include "frozen_modules/encodings.mac_farsi.h"
+#include "frozen_modules/encodings.mac_greek.h"
+#include "frozen_modules/encodings.mac_iceland.h"
+#include "frozen_modules/encodings.mac_latin2.h"
+#include "frozen_modules/encodings.mac_roman.h"
+#include "frozen_modules/encodings.mac_romanian.h"
+#include "frozen_modules/encodings.mac_turkish.h"
+#include "frozen_modules/encodings.mbcs.h"
+#include "frozen_modules/encodings.oem.h"
+#include "frozen_modules/encodings.palmos.h"
+#include "frozen_modules/encodings.ptcp154.h"
+#include "frozen_modules/encodings.punycode.h"
+#include "frozen_modules/encodings.quopri_codec.h"
+#include "frozen_modules/encodings.raw_unicode_escape.h"
+#include "frozen_modules/encodings.rot_13.h"
+#include "frozen_modules/encodings.shift_jis.h"
+#include "frozen_modules/encodings.shift_jis_2004.h"
+#include "frozen_modules/encodings.shift_jisx0213.h"
+#include "frozen_modules/encodings.tis_620.h"
+#include "frozen_modules/encodings.undefined.h"
+#include "frozen_modules/encodings.unicode_escape.h"
+#include "frozen_modules/encodings.utf_16.h"
+#include "frozen_modules/encodings.utf_16_be.h"
+#include "frozen_modules/encodings.utf_16_le.h"
+#include "frozen_modules/encodings.utf_32.h"
+#include "frozen_modules/encodings.utf_32_be.h"
+#include "frozen_modules/encodings.utf_32_le.h"
+#include "frozen_modules/encodings.utf_7.h"
+#include "frozen_modules/encodings.utf_8.h"
+#include "frozen_modules/encodings.utf_8_sig.h"
+#include "frozen_modules/encodings.uu_codec.h"
+#include "frozen_modules/encodings.zlib_codec.h"
 #include "frozen_modules/_collections_abc.h"
 #include "frozen_modules/_sitebuiltins.h"
 #include "frozen_modules/genericpath.h"
@@ -75,12 +135,73 @@ extern PyObject *_Py_get_zipimport_toplevel(void);
 extern PyObject *_Py_get_abc_toplevel(void);
 extern PyObject *_Py_get_codecs_toplevel(void);
 extern PyObject *_Py_get_io_toplevel(void);
+extern PyObject *_Py_get_encodings_toplevel(void);
+extern PyObject *_Py_get_encodings_toplevel(void);
+extern PyObject *_Py_get_encodings_aliases_toplevel(void);
+extern PyObject *_Py_get_encodings_ascii_toplevel(void);
+extern PyObject *_Py_get_encodings_base64_codec_toplevel(void);
+extern PyObject *_Py_get_encodings_big5_toplevel(void);
+extern PyObject *_Py_get_encodings_big5hkscs_toplevel(void);
+extern PyObject *_Py_get_encodings_bz2_codec_toplevel(void);
+extern PyObject *_Py_get_encodings_charmap_toplevel(void);
+extern PyObject *_Py_get_encodings_euc_jis_2004_toplevel(void);
+extern PyObject *_Py_get_encodings_euc_jisx0213_toplevel(void);
+extern PyObject *_Py_get_encodings_euc_jp_toplevel(void);
+extern PyObject *_Py_get_encodings_euc_kr_toplevel(void);
+extern PyObject *_Py_get_encodings_gb18030_toplevel(void);
+extern PyObject *_Py_get_encodings_gb2312_toplevel(void);
+extern PyObject *_Py_get_encodings_gbk_toplevel(void);
+extern PyObject *_Py_get_encodings_hex_codec_toplevel(void);
+extern PyObject *_Py_get_encodings_hp_roman8_toplevel(void);
+extern PyObject *_Py_get_encodings_hz_toplevel(void);
+extern PyObject *_Py_get_encodings_idna_toplevel(void);
+extern PyObject *_Py_get_encodings_johab_toplevel(void);
+extern PyObject *_Py_get_encodings_koi8_r_toplevel(void);
+extern PyObject *_Py_get_encodings_koi8_t_toplevel(void);
+extern PyObject *_Py_get_encodings_koi8_u_toplevel(void);
+extern PyObject *_Py_get_encodings_kz1048_toplevel(void);
+extern PyObject *_Py_get_encodings_latin_1_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_arabic_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_croatian_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_cyrillic_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_farsi_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_greek_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_iceland_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_latin2_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_roman_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_romanian_toplevel(void);
+extern PyObject *_Py_get_encodings_mac_turkish_toplevel(void);
+extern PyObject *_Py_get_encodings_mbcs_toplevel(void);
+extern PyObject *_Py_get_encodings_oem_toplevel(void);
+extern PyObject *_Py_get_encodings_palmos_toplevel(void);
+extern PyObject *_Py_get_encodings_ptcp154_toplevel(void);
+extern PyObject *_Py_get_encodings_punycode_toplevel(void);
+extern PyObject *_Py_get_encodings_quopri_codec_toplevel(void);
+extern PyObject *_Py_get_encodings_raw_unicode_escape_toplevel(void);
+extern PyObject *_Py_get_encodings_rot_13_toplevel(void);
+extern PyObject *_Py_get_encodings_shift_jis_toplevel(void);
+extern PyObject *_Py_get_encodings_shift_jis_2004_toplevel(void);
+extern PyObject *_Py_get_encodings_shift_jisx0213_toplevel(void);
+extern PyObject *_Py_get_encodings_tis_620_toplevel(void);
+extern PyObject *_Py_get_encodings_undefined_toplevel(void);
+extern PyObject *_Py_get_encodings_unicode_escape_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_16_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_16_be_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_16_le_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_32_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_32_be_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_32_le_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_7_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_8_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_8_sig_toplevel(void);
+extern PyObject *_Py_get_encodings_uu_codec_toplevel(void);
+extern PyObject *_Py_get_encodings_zlib_codec_toplevel(void);
 extern PyObject *_Py_get__collections_abc_toplevel(void);
 extern PyObject *_Py_get__sitebuiltins_toplevel(void);
 extern PyObject *_Py_get_genericpath_toplevel(void);
 extern PyObject *_Py_get_ntpath_toplevel(void);
 extern PyObject *_Py_get_posixpath_toplevel(void);
-extern PyObject *_Py_get_posixpath_toplevel(void);
+extern PyObject *_Py_get_ntpath_toplevel(void);
 extern PyObject *_Py_get_os_toplevel(void);
 extern PyObject *_Py_get_site_toplevel(void);
 extern PyObject *_Py_get_stat_toplevel(void);
@@ -111,6 +232,67 @@ static const struct _frozen stdlib_modules[] = {
     {"abc", _Py_M__abc, (int)sizeof(_Py_M__abc), false},
     {"codecs", _Py_M__codecs, (int)sizeof(_Py_M__codecs), false},
     {"io", _Py_M__io, (int)sizeof(_Py_M__io), false},
+    {"encodings", _Py_M__encodings, (int)sizeof(_Py_M__encodings), true},
+    {"encodings.__init__", _Py_M__encodings, (int)sizeof(_Py_M__encodings), false},
+    {"encodings.aliases", _Py_M__encodings_aliases, (int)sizeof(_Py_M__encodings_aliases), false},
+    {"encodings.ascii", _Py_M__encodings_ascii, (int)sizeof(_Py_M__encodings_ascii), false},
+    {"encodings.base64_codec", _Py_M__encodings_base64_codec, (int)sizeof(_Py_M__encodings_base64_codec), false},
+    {"encodings.big5", _Py_M__encodings_big5, (int)sizeof(_Py_M__encodings_big5), false},
+    {"encodings.big5hkscs", _Py_M__encodings_big5hkscs, (int)sizeof(_Py_M__encodings_big5hkscs), false},
+    {"encodings.bz2_codec", _Py_M__encodings_bz2_codec, (int)sizeof(_Py_M__encodings_bz2_codec), false},
+    {"encodings.charmap", _Py_M__encodings_charmap, (int)sizeof(_Py_M__encodings_charmap), false},
+    {"encodings.euc_jis_2004", _Py_M__encodings_euc_jis_2004, (int)sizeof(_Py_M__encodings_euc_jis_2004), false},
+    {"encodings.euc_jisx0213", _Py_M__encodings_euc_jisx0213, (int)sizeof(_Py_M__encodings_euc_jisx0213), false},
+    {"encodings.euc_jp", _Py_M__encodings_euc_jp, (int)sizeof(_Py_M__encodings_euc_jp), false},
+    {"encodings.euc_kr", _Py_M__encodings_euc_kr, (int)sizeof(_Py_M__encodings_euc_kr), false},
+    {"encodings.gb18030", _Py_M__encodings_gb18030, (int)sizeof(_Py_M__encodings_gb18030), false},
+    {"encodings.gb2312", _Py_M__encodings_gb2312, (int)sizeof(_Py_M__encodings_gb2312), false},
+    {"encodings.gbk", _Py_M__encodings_gbk, (int)sizeof(_Py_M__encodings_gbk), false},
+    {"encodings.hex_codec", _Py_M__encodings_hex_codec, (int)sizeof(_Py_M__encodings_hex_codec), false},
+    {"encodings.hp_roman8", _Py_M__encodings_hp_roman8, (int)sizeof(_Py_M__encodings_hp_roman8), false},
+    {"encodings.hz", _Py_M__encodings_hz, (int)sizeof(_Py_M__encodings_hz), false},
+    {"encodings.idna", _Py_M__encodings_idna, (int)sizeof(_Py_M__encodings_idna), false},
+    {"encodings.johab", _Py_M__encodings_johab, (int)sizeof(_Py_M__encodings_johab), false},
+    {"encodings.koi8_r", _Py_M__encodings_koi8_r, (int)sizeof(_Py_M__encodings_koi8_r), false},
+    {"encodings.koi8_t", _Py_M__encodings_koi8_t, (int)sizeof(_Py_M__encodings_koi8_t), false},
+    {"encodings.koi8_u", _Py_M__encodings_koi8_u, (int)sizeof(_Py_M__encodings_koi8_u), false},
+    {"encodings.kz1048", _Py_M__encodings_kz1048, (int)sizeof(_Py_M__encodings_kz1048), false},
+    {"encodings.latin_1", _Py_M__encodings_latin_1, (int)sizeof(_Py_M__encodings_latin_1), false},
+    {"encodings.mac_arabic", _Py_M__encodings_mac_arabic, (int)sizeof(_Py_M__encodings_mac_arabic), false},
+    {"encodings.mac_croatian", _Py_M__encodings_mac_croatian, (int)sizeof(_Py_M__encodings_mac_croatian), false},
+    {"encodings.mac_cyrillic", _Py_M__encodings_mac_cyrillic, (int)sizeof(_Py_M__encodings_mac_cyrillic), false},
+    {"encodings.mac_farsi", _Py_M__encodings_mac_farsi, (int)sizeof(_Py_M__encodings_mac_farsi), false},
+    {"encodings.mac_greek", _Py_M__encodings_mac_greek, (int)sizeof(_Py_M__encodings_mac_greek), false},
+    {"encodings.mac_iceland", _Py_M__encodings_mac_iceland, (int)sizeof(_Py_M__encodings_mac_iceland), false},
+    {"encodings.mac_latin2", _Py_M__encodings_mac_latin2, (int)sizeof(_Py_M__encodings_mac_latin2), false},
+    {"encodings.mac_roman", _Py_M__encodings_mac_roman, (int)sizeof(_Py_M__encodings_mac_roman), false},
+    {"encodings.mac_romanian", _Py_M__encodings_mac_romanian, (int)sizeof(_Py_M__encodings_mac_romanian), false},
+    {"encodings.mac_turkish", _Py_M__encodings_mac_turkish, (int)sizeof(_Py_M__encodings_mac_turkish), false},
+    {"encodings.mbcs", _Py_M__encodings_mbcs, (int)sizeof(_Py_M__encodings_mbcs), false},
+    {"encodings.oem", _Py_M__encodings_oem, (int)sizeof(_Py_M__encodings_oem), false},
+    {"encodings.palmos", _Py_M__encodings_palmos, (int)sizeof(_Py_M__encodings_palmos), false},
+    {"encodings.ptcp154", _Py_M__encodings_ptcp154, (int)sizeof(_Py_M__encodings_ptcp154), false},
+    {"encodings.punycode", _Py_M__encodings_punycode, (int)sizeof(_Py_M__encodings_punycode), false},
+    {"encodings.quopri_codec", _Py_M__encodings_quopri_codec, (int)sizeof(_Py_M__encodings_quopri_codec), false},
+    {"encodings.raw_unicode_escape", _Py_M__encodings_raw_unicode_escape, (int)sizeof(_Py_M__encodings_raw_unicode_escape), false},
+    {"encodings.rot_13", _Py_M__encodings_rot_13, (int)sizeof(_Py_M__encodings_rot_13), false},
+    {"encodings.shift_jis", _Py_M__encodings_shift_jis, (int)sizeof(_Py_M__encodings_shift_jis), false},
+    {"encodings.shift_jis_2004", _Py_M__encodings_shift_jis_2004, (int)sizeof(_Py_M__encodings_shift_jis_2004), false},
+    {"encodings.shift_jisx0213", _Py_M__encodings_shift_jisx0213, (int)sizeof(_Py_M__encodings_shift_jisx0213), false},
+    {"encodings.tis_620", _Py_M__encodings_tis_620, (int)sizeof(_Py_M__encodings_tis_620), false},
+    {"encodings.undefined", _Py_M__encodings_undefined, (int)sizeof(_Py_M__encodings_undefined), false},
+    {"encodings.unicode_escape", _Py_M__encodings_unicode_escape, (int)sizeof(_Py_M__encodings_unicode_escape), false},
+    {"encodings.utf_16", _Py_M__encodings_utf_16, (int)sizeof(_Py_M__encodings_utf_16), false},
+    {"encodings.utf_16_be", _Py_M__encodings_utf_16_be, (int)sizeof(_Py_M__encodings_utf_16_be), false},
+    {"encodings.utf_16_le", _Py_M__encodings_utf_16_le, (int)sizeof(_Py_M__encodings_utf_16_le), false},
+    {"encodings.utf_32", _Py_M__encodings_utf_32, (int)sizeof(_Py_M__encodings_utf_32), false},
+    {"encodings.utf_32_be", _Py_M__encodings_utf_32_be, (int)sizeof(_Py_M__encodings_utf_32_be), false},
+    {"encodings.utf_32_le", _Py_M__encodings_utf_32_le, (int)sizeof(_Py_M__encodings_utf_32_le), false},
+    {"encodings.utf_7", _Py_M__encodings_utf_7, (int)sizeof(_Py_M__encodings_utf_7), false},
+    {"encodings.utf_8", _Py_M__encodings_utf_8, (int)sizeof(_Py_M__encodings_utf_8), false},
+    {"encodings.utf_8_sig", _Py_M__encodings_utf_8_sig, (int)sizeof(_Py_M__encodings_utf_8_sig), false},
+    {"encodings.uu_codec", _Py_M__encodings_uu_codec, (int)sizeof(_Py_M__encodings_uu_codec), false},
+    {"encodings.zlib_codec", _Py_M__encodings_zlib_codec, (int)sizeof(_Py_M__encodings_zlib_codec), false},
 
     /* stdlib - startup, with site */
     {"_collections_abc", _Py_M___collections_abc, (int)sizeof(_Py_M___collections_abc), false},
@@ -118,7 +300,7 @@ static const struct _frozen stdlib_modules[] = {
     {"genericpath", _Py_M__genericpath, (int)sizeof(_Py_M__genericpath), false},
     {"ntpath", _Py_M__ntpath, (int)sizeof(_Py_M__ntpath), false},
     {"posixpath", _Py_M__posixpath, (int)sizeof(_Py_M__posixpath), false},
-    {"os.path", _Py_M__posixpath, (int)sizeof(_Py_M__posixpath), false},
+    {"os.path", _Py_M__ntpath, (int)sizeof(_Py_M__ntpath), false},
     {"os", _Py_M__os, (int)sizeof(_Py_M__os), false},
     {"site", _Py_M__site, (int)sizeof(_Py_M__site), false},
     {"stat", _Py_M__stat, (int)sizeof(_Py_M__stat), false},
@@ -150,7 +332,8 @@ const struct _frozen *_PyImport_FrozenTest = test_modules;
 static const struct _module_alias aliases[] = {
     {"_frozen_importlib", "importlib._bootstrap"},
     {"_frozen_importlib_external", "importlib._bootstrap_external"},
-    {"os.path", "posixpath"},
+    {"encodings.__init__", "<encodings"},
+    {"os.path", "ntpath"},
     {"__hello_alias__", "__hello__"},
     {"__phello_alias__", "__hello__"},
     {"__phello_alias__.spam", "__hello__"},

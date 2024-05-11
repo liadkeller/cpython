@@ -57,6 +57,7 @@ FROZEN = [
         # (See https://github.com/python/cpython/pull/28398#pullrequestreview-756856469.)
         #'<encodings.*>',
         'io',
+        '<encodings.*>',
         ]),
     ('stdlib - startup, with site', [
         '_collections_abc',
