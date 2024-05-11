@@ -468,55 +468,10 @@
     <None Include="..\Lib\encodings\base64_codec.py">
       <Filter>Python Files</Filter>
     </None>
-    <None Include="..\Lib\encodings\big5.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\big5hkscs.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\bz2_codec.py">
-      <Filter>Python Files</Filter>
-    </None>
     <None Include="..\Lib\encodings\charmap.py">
       <Filter>Python Files</Filter>
     </None>
-    <None Include="..\Lib\encodings\euc_jis_2004.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\euc_jisx0213.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\euc_jp.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\euc_kr.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\gb18030.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\gb2312.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\gbk.py">
-      <Filter>Python Files</Filter>
-    </None>
     <None Include="..\Lib\encodings\hex_codec.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\hp_roman8.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\hz.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\idna.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\johab.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\koi8_r.py">
       <Filter>Python Files</Filter>
     </None>
     <None Include="..\Lib\encodings\koi8_t.py">
@@ -591,12 +546,6 @@
     <None Include="..\Lib\encodings\shift_jis_2004.py">
       <Filter>Python Files</Filter>
     </None>
-    <None Include="..\Lib\encodings\shift_jisx0213.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\tis_620.py">
-      <Filter>Python Files</Filter>
-    </None>
     <None Include="..\Lib\encodings\undefined.py">
       <Filter>Python Files</Filter>
     </None>
@@ -619,9 +568,6 @@
       <Filter>Python Files</Filter>
     </None>
     <None Include="..\Lib\encodings\utf_32_le.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\utf_7.py">
       <Filter>Python Files</Filter>
     </None>
     <None Include="..\Lib\encodings\utf_8.py">

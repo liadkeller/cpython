@@ -51,23 +51,8 @@
 #include "frozen_modules/encodings.aliases.h"
 #include "frozen_modules/encodings.ascii.h"
 #include "frozen_modules/encodings.base64_codec.h"
-#include "frozen_modules/encodings.big5.h"
-#include "frozen_modules/encodings.big5hkscs.h"
-#include "frozen_modules/encodings.bz2_codec.h"
 #include "frozen_modules/encodings.charmap.h"
-#include "frozen_modules/encodings.euc_jis_2004.h"
-#include "frozen_modules/encodings.euc_jisx0213.h"
-#include "frozen_modules/encodings.euc_jp.h"
-#include "frozen_modules/encodings.euc_kr.h"
-#include "frozen_modules/encodings.gb18030.h"
-#include "frozen_modules/encodings.gb2312.h"
-#include "frozen_modules/encodings.gbk.h"
 #include "frozen_modules/encodings.hex_codec.h"
-#include "frozen_modules/encodings.hp_roman8.h"
-#include "frozen_modules/encodings.hz.h"
-#include "frozen_modules/encodings.idna.h"
-#include "frozen_modules/encodings.johab.h"
-#include "frozen_modules/encodings.koi8_r.h"
 #include "frozen_modules/encodings.koi8_t.h"
 #include "frozen_modules/encodings.koi8_u.h"
 #include "frozen_modules/encodings.kz1048.h"
@@ -92,8 +77,6 @@
 #include "frozen_modules/encodings.rot_13.h"
 #include "frozen_modules/encodings.shift_jis.h"
 #include "frozen_modules/encodings.shift_jis_2004.h"
-#include "frozen_modules/encodings.shift_jisx0213.h"
-#include "frozen_modules/encodings.tis_620.h"
 #include "frozen_modules/encodings.undefined.h"
 #include "frozen_modules/encodings.unicode_escape.h"
 #include "frozen_modules/encodings.utf_16.h"
@@ -102,7 +85,6 @@
 #include "frozen_modules/encodings.utf_32.h"
 #include "frozen_modules/encodings.utf_32_be.h"
 #include "frozen_modules/encodings.utf_32_le.h"
-#include "frozen_modules/encodings.utf_7.h"
 #include "frozen_modules/encodings.utf_8.h"
 #include "frozen_modules/encodings.utf_8_sig.h"
 #include "frozen_modules/encodings.uu_codec.h"
@@ -140,23 +122,8 @@ extern PyObject *_Py_get_encodings_toplevel(void);
 extern PyObject *_Py_get_encodings_aliases_toplevel(void);
 extern PyObject *_Py_get_encodings_ascii_toplevel(void);
 extern PyObject *_Py_get_encodings_base64_codec_toplevel(void);
-extern PyObject *_Py_get_encodings_big5_toplevel(void);
-extern PyObject *_Py_get_encodings_big5hkscs_toplevel(void);
-extern PyObject *_Py_get_encodings_bz2_codec_toplevel(void);
 extern PyObject *_Py_get_encodings_charmap_toplevel(void);
-extern PyObject *_Py_get_encodings_euc_jis_2004_toplevel(void);
-extern PyObject *_Py_get_encodings_euc_jisx0213_toplevel(void);
-extern PyObject *_Py_get_encodings_euc_jp_toplevel(void);
-extern PyObject *_Py_get_encodings_euc_kr_toplevel(void);
-extern PyObject *_Py_get_encodings_gb18030_toplevel(void);
-extern PyObject *_Py_get_encodings_gb2312_toplevel(void);
-extern PyObject *_Py_get_encodings_gbk_toplevel(void);
 extern PyObject *_Py_get_encodings_hex_codec_toplevel(void);
-extern PyObject *_Py_get_encodings_hp_roman8_toplevel(void);
-extern PyObject *_Py_get_encodings_hz_toplevel(void);
-extern PyObject *_Py_get_encodings_idna_toplevel(void);
-extern PyObject *_Py_get_encodings_johab_toplevel(void);
-extern PyObject *_Py_get_encodings_koi8_r_toplevel(void);
 extern PyObject *_Py_get_encodings_koi8_t_toplevel(void);
 extern PyObject *_Py_get_encodings_koi8_u_toplevel(void);
 extern PyObject *_Py_get_encodings_kz1048_toplevel(void);
@@ -181,8 +148,6 @@ extern PyObject *_Py_get_encodings_raw_unicode_escape_toplevel(void);
 extern PyObject *_Py_get_encodings_rot_13_toplevel(void);
 extern PyObject *_Py_get_encodings_shift_jis_toplevel(void);
 extern PyObject *_Py_get_encodings_shift_jis_2004_toplevel(void);
-extern PyObject *_Py_get_encodings_shift_jisx0213_toplevel(void);
-extern PyObject *_Py_get_encodings_tis_620_toplevel(void);
 extern PyObject *_Py_get_encodings_undefined_toplevel(void);
 extern PyObject *_Py_get_encodings_unicode_escape_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_16_toplevel(void);
@@ -191,7 +156,6 @@ extern PyObject *_Py_get_encodings_utf_16_le_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_32_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_32_be_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_32_le_toplevel(void);
-extern PyObject *_Py_get_encodings_utf_7_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_8_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_8_sig_toplevel(void);
 extern PyObject *_Py_get_encodings_uu_codec_toplevel(void);
@@ -237,23 +201,8 @@ static const struct _frozen stdlib_modules[] = {
     {"encodings.aliases", _Py_M__encodings_aliases, (int)sizeof(_Py_M__encodings_aliases), false},
     {"encodings.ascii", _Py_M__encodings_ascii, (int)sizeof(_Py_M__encodings_ascii), false},
     {"encodings.base64_codec", _Py_M__encodings_base64_codec, (int)sizeof(_Py_M__encodings_base64_codec), false},
-    {"encodings.big5", _Py_M__encodings_big5, (int)sizeof(_Py_M__encodings_big5), false},
-    {"encodings.big5hkscs", _Py_M__encodings_big5hkscs, (int)sizeof(_Py_M__encodings_big5hkscs), false},
-    {"encodings.bz2_codec", _Py_M__encodings_bz2_codec, (int)sizeof(_Py_M__encodings_bz2_codec), false},
     {"encodings.charmap", _Py_M__encodings_charmap, (int)sizeof(_Py_M__encodings_charmap), false},
-    {"encodings.euc_jis_2004", _Py_M__encodings_euc_jis_2004, (int)sizeof(_Py_M__encodings_euc_jis_2004), false},
-    {"encodings.euc_jisx0213", _Py_M__encodings_euc_jisx0213, (int)sizeof(_Py_M__encodings_euc_jisx0213), false},
-    {"encodings.euc_jp", _Py_M__encodings_euc_jp, (int)sizeof(_Py_M__encodings_euc_jp), false},
-    {"encodings.euc_kr", _Py_M__encodings_euc_kr, (int)sizeof(_Py_M__encodings_euc_kr), false},
-    {"encodings.gb18030", _Py_M__encodings_gb18030, (int)sizeof(_Py_M__encodings_gb18030), false},
-    {"encodings.gb2312", _Py_M__encodings_gb2312, (int)sizeof(_Py_M__encodings_gb2312), false},
-    {"encodings.gbk", _Py_M__encodings_gbk, (int)sizeof(_Py_M__encodings_gbk), false},
     {"encodings.hex_codec", _Py_M__encodings_hex_codec, (int)sizeof(_Py_M__encodings_hex_codec), false},
-    {"encodings.hp_roman8", _Py_M__encodings_hp_roman8, (int)sizeof(_Py_M__encodings_hp_roman8), false},
-    {"encodings.hz", _Py_M__encodings_hz, (int)sizeof(_Py_M__encodings_hz), false},
-    {"encodings.idna", _Py_M__encodings_idna, (int)sizeof(_Py_M__encodings_idna), false},
-    {"encodings.johab", _Py_M__encodings_johab, (int)sizeof(_Py_M__encodings_johab), false},
-    {"encodings.koi8_r", _Py_M__encodings_koi8_r, (int)sizeof(_Py_M__encodings_koi8_r), false},
     {"encodings.koi8_t", _Py_M__encodings_koi8_t, (int)sizeof(_Py_M__encodings_koi8_t), false},
     {"encodings.koi8_u", _Py_M__encodings_koi8_u, (int)sizeof(_Py_M__encodings_koi8_u), false},
     {"encodings.kz1048", _Py_M__encodings_kz1048, (int)sizeof(_Py_M__encodings_kz1048), false},
@@ -278,8 +227,6 @@ static const struct _frozen stdlib_modules[] = {
     {"encodings.rot_13", _Py_M__encodings_rot_13, (int)sizeof(_Py_M__encodings_rot_13), false},
     {"encodings.shift_jis", _Py_M__encodings_shift_jis, (int)sizeof(_Py_M__encodings_shift_jis), false},
     {"encodings.shift_jis_2004", _Py_M__encodings_shift_jis_2004, (int)sizeof(_Py_M__encodings_shift_jis_2004), false},
-    {"encodings.shift_jisx0213", _Py_M__encodings_shift_jisx0213, (int)sizeof(_Py_M__encodings_shift_jisx0213), false},
-    {"encodings.tis_620", _Py_M__encodings_tis_620, (int)sizeof(_Py_M__encodings_tis_620), false},
     {"encodings.undefined", _Py_M__encodings_undefined, (int)sizeof(_Py_M__encodings_undefined), false},
     {"encodings.unicode_escape", _Py_M__encodings_unicode_escape, (int)sizeof(_Py_M__encodings_unicode_escape), false},
     {"encodings.utf_16", _Py_M__encodings_utf_16, (int)sizeof(_Py_M__encodings_utf_16), false},
@@ -288,7 +235,6 @@ static const struct _frozen stdlib_modules[] = {
     {"encodings.utf_32", _Py_M__encodings_utf_32, (int)sizeof(_Py_M__encodings_utf_32), false},
     {"encodings.utf_32_be", _Py_M__encodings_utf_32_be, (int)sizeof(_Py_M__encodings_utf_32_be), false},
     {"encodings.utf_32_le", _Py_M__encodings_utf_32_le, (int)sizeof(_Py_M__encodings_utf_32_le), false},
-    {"encodings.utf_7", _Py_M__encodings_utf_7, (int)sizeof(_Py_M__encodings_utf_7), false},
     {"encodings.utf_8", _Py_M__encodings_utf_8, (int)sizeof(_Py_M__encodings_utf_8), false},
     {"encodings.utf_8_sig", _Py_M__encodings_utf_8_sig, (int)sizeof(_Py_M__encodings_utf_8_sig), false},
     {"encodings.uu_codec", _Py_M__encodings_uu_codec, (int)sizeof(_Py_M__encodings_uu_codec), false},
