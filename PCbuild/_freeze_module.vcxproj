@@ -284,75 +284,15 @@
       <IntFile>$(IntDir)encodings.aliases.g.h</IntFile>
       <OutFile>$(PySourcePath)Python\frozen_modules\encodings.aliases.h</OutFile>
     </None>
-    <None Include="..\Lib\encodings\ascii.py">
-      <ModName>encodings.ascii</ModName>
-      <IntFile>$(IntDir)encodings.ascii.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.ascii.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\base64_codec.py">
-      <ModName>encodings.base64_codec</ModName>
-      <IntFile>$(IntDir)encodings.base64_codec.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.base64_codec.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\charmap.py">
-      <ModName>encodings.charmap</ModName>
-      <IntFile>$(IntDir)encodings.charmap.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.charmap.h</OutFile>
-    </None>
     <None Include="..\Lib\encodings\cp1252.py">
       <ModName>encodings.cp1252</ModName>
       <IntFile>$(IntDir)encodings.cp1252.g.h</IntFile>
       <OutFile>$(PySourcePath)Python\frozen_modules\encodings.cp1252.h</OutFile>
     </None>
-    <None Include="..\Lib\encodings\hex_codec.py">
-      <ModName>encodings.hex_codec</ModName>
-      <IntFile>$(IntDir)encodings.hex_codec.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.hex_codec.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\latin_1.py">
-      <ModName>encodings.latin_1</ModName>
-      <IntFile>$(IntDir)encodings.latin_1.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.latin_1.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\raw_unicode_escape.py">
-      <ModName>encodings.raw_unicode_escape</ModName>
-      <IntFile>$(IntDir)encodings.raw_unicode_escape.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.raw_unicode_escape.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\undefined.py">
-      <ModName>encodings.undefined</ModName>
-      <IntFile>$(IntDir)encodings.undefined.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.undefined.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\unicode_escape.py">
-      <ModName>encodings.unicode_escape</ModName>
-      <IntFile>$(IntDir)encodings.unicode_escape.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.unicode_escape.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\utf_16.py">
-      <ModName>encodings.utf_16</ModName>
-      <IntFile>$(IntDir)encodings.utf_16.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.utf_16.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\utf_16_be.py">
-      <ModName>encodings.utf_16_be</ModName>
-      <IntFile>$(IntDir)encodings.utf_16_be.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.utf_16_be.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\utf_16_le.py">
-      <ModName>encodings.utf_16_le</ModName>
-      <IntFile>$(IntDir)encodings.utf_16_le.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.utf_16_le.h</OutFile>
-    </None>
     <None Include="..\Lib\encodings\utf_8.py">
       <ModName>encodings.utf_8</ModName>
       <IntFile>$(IntDir)encodings.utf_8.g.h</IntFile>
       <OutFile>$(PySourcePath)Python\frozen_modules\encodings.utf_8.h</OutFile>
-    </None>
-    <None Include="..\Lib\encodings\utf_8_sig.py">
-      <ModName>encodings.utf_8_sig</ModName>
-      <IntFile>$(IntDir)encodings.utf_8_sig.g.h</IntFile>
-      <OutFile>$(PySourcePath)Python\frozen_modules\encodings.utf_8_sig.h</OutFile>
     </None>
     <None Include="..\Lib\io.py">
       <ModName>io</ModName>
@@ -494,20 +434,8 @@
 		 "$(PySourcePath)Python\frozen_modules\codecs.h:codecs" ^
 		 "$(PySourcePath)Python\frozen_modules\encodings.h:encodings" ^
 		 "$(PySourcePath)Python\frozen_modules\encodings.aliases.h:encodings.aliases" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.ascii.h:encodings.ascii" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.base64_codec.h:encodings.base64_codec" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.charmap.h:encodings.charmap" ^
 		 "$(PySourcePath)Python\frozen_modules\encodings.cp1252.h:encodings.cp1252" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.hex_codec.h:encodings.hex_codec" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.latin_1.h:encodings.latin_1" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.raw_unicode_escape.h:encodings.raw_unicode_escape" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.undefined.h:encodings.undefined" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.unicode_escape.h:encodings.unicode_escape" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.utf_16.h:encodings.utf_16" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.utf_16_be.h:encodings.utf_16_be" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.utf_16_le.h:encodings.utf_16_le" ^
 		 "$(PySourcePath)Python\frozen_modules\encodings.utf_8.h:encodings.utf_8" ^
-		 "$(PySourcePath)Python\frozen_modules\encodings.utf_8_sig.h:encodings.utf_8_sig" ^
 		 "$(PySourcePath)Python\frozen_modules\io.h:io" ^
 		 "$(PySourcePath)Python\frozen_modules\_collections_abc.h:_collections_abc" ^
 		 "$(PySourcePath)Python\frozen_modules\_sitebuiltins.h:_sitebuiltins" ^

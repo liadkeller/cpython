@@ -48,20 +48,8 @@
 #include "frozen_modules/codecs.h"
 #include "frozen_modules/encodings.h"
 #include "frozen_modules/encodings.aliases.h"
-#include "frozen_modules/encodings.ascii.h"
-#include "frozen_modules/encodings.base64_codec.h"
-#include "frozen_modules/encodings.charmap.h"
 #include "frozen_modules/encodings.cp1252.h"
-#include "frozen_modules/encodings.hex_codec.h"
-#include "frozen_modules/encodings.latin_1.h"
-#include "frozen_modules/encodings.raw_unicode_escape.h"
-#include "frozen_modules/encodings.undefined.h"
-#include "frozen_modules/encodings.unicode_escape.h"
-#include "frozen_modules/encodings.utf_16.h"
-#include "frozen_modules/encodings.utf_16_be.h"
-#include "frozen_modules/encodings.utf_16_le.h"
 #include "frozen_modules/encodings.utf_8.h"
-#include "frozen_modules/encodings.utf_8_sig.h"
 #include "frozen_modules/io.h"
 #include "frozen_modules/_collections_abc.h"
 #include "frozen_modules/_sitebuiltins.h"
@@ -93,20 +81,8 @@ extern PyObject *_Py_get_codecs_toplevel(void);
 extern PyObject *_Py_get_encodings_toplevel(void);
 extern PyObject *_Py_get_encodings_toplevel(void);
 extern PyObject *_Py_get_encodings_aliases_toplevel(void);
-extern PyObject *_Py_get_encodings_ascii_toplevel(void);
-extern PyObject *_Py_get_encodings_base64_codec_toplevel(void);
-extern PyObject *_Py_get_encodings_charmap_toplevel(void);
 extern PyObject *_Py_get_encodings_cp1252_toplevel(void);
-extern PyObject *_Py_get_encodings_hex_codec_toplevel(void);
-extern PyObject *_Py_get_encodings_latin_1_toplevel(void);
-extern PyObject *_Py_get_encodings_raw_unicode_escape_toplevel(void);
-extern PyObject *_Py_get_encodings_undefined_toplevel(void);
-extern PyObject *_Py_get_encodings_unicode_escape_toplevel(void);
-extern PyObject *_Py_get_encodings_utf_16_toplevel(void);
-extern PyObject *_Py_get_encodings_utf_16_be_toplevel(void);
-extern PyObject *_Py_get_encodings_utf_16_le_toplevel(void);
 extern PyObject *_Py_get_encodings_utf_8_toplevel(void);
-extern PyObject *_Py_get_encodings_utf_8_sig_toplevel(void);
 extern PyObject *_Py_get_io_toplevel(void);
 extern PyObject *_Py_get__collections_abc_toplevel(void);
 extern PyObject *_Py_get__sitebuiltins_toplevel(void);
@@ -146,20 +122,8 @@ static const struct _frozen stdlib_modules[] = {
     {"encodings", _Py_M__encodings, (int)sizeof(_Py_M__encodings), true},
     {"encodings.__init__", _Py_M__encodings, (int)sizeof(_Py_M__encodings), false},
     {"encodings.aliases", _Py_M__encodings_aliases, (int)sizeof(_Py_M__encodings_aliases), false},
-    {"encodings.ascii", _Py_M__encodings_ascii, (int)sizeof(_Py_M__encodings_ascii), false},
-    {"encodings.base64_codec", _Py_M__encodings_base64_codec, (int)sizeof(_Py_M__encodings_base64_codec), false},
-    {"encodings.charmap", _Py_M__encodings_charmap, (int)sizeof(_Py_M__encodings_charmap), false},
     {"encodings.cp1252", _Py_M__encodings_cp1252, (int)sizeof(_Py_M__encodings_cp1252), false},
-    {"encodings.hex_codec", _Py_M__encodings_hex_codec, (int)sizeof(_Py_M__encodings_hex_codec), false},
-    {"encodings.latin_1", _Py_M__encodings_latin_1, (int)sizeof(_Py_M__encodings_latin_1), false},
-    {"encodings.raw_unicode_escape", _Py_M__encodings_raw_unicode_escape, (int)sizeof(_Py_M__encodings_raw_unicode_escape), false},
-    {"encodings.undefined", _Py_M__encodings_undefined, (int)sizeof(_Py_M__encodings_undefined), false},
-    {"encodings.unicode_escape", _Py_M__encodings_unicode_escape, (int)sizeof(_Py_M__encodings_unicode_escape), false},
-    {"encodings.utf_16", _Py_M__encodings_utf_16, (int)sizeof(_Py_M__encodings_utf_16), false},
-    {"encodings.utf_16_be", _Py_M__encodings_utf_16_be, (int)sizeof(_Py_M__encodings_utf_16_be), false},
-    {"encodings.utf_16_le", _Py_M__encodings_utf_16_le, (int)sizeof(_Py_M__encodings_utf_16_le), false},
     {"encodings.utf_8", _Py_M__encodings_utf_8, (int)sizeof(_Py_M__encodings_utf_8), false},
-    {"encodings.utf_8_sig", _Py_M__encodings_utf_8_sig, (int)sizeof(_Py_M__encodings_utf_8_sig), false},
     {"io", _Py_M__io, (int)sizeof(_Py_M__io), false},
 
     /* stdlib - startup, with site */

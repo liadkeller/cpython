@@ -459,46 +459,10 @@
     <None Include="..\Lib\encodings\aliases.py">
       <Filter>Python Files</Filter>
     </None>
-    <None Include="..\Lib\encodings\ascii.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\base64_codec.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\charmap.py">
-      <Filter>Python Files</Filter>
-    </None>
     <None Include="..\Lib\encodings\cp1252.py">
       <Filter>Python Files</Filter>
     </None>
-    <None Include="..\Lib\encodings\hex_codec.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\latin_1.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\raw_unicode_escape.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\undefined.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\unicode_escape.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\utf_16.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\utf_16_be.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\utf_16_le.py">
-      <Filter>Python Files</Filter>
-    </None>
     <None Include="..\Lib\encodings\utf_8.py">
-      <Filter>Python Files</Filter>
-    </None>
-    <None Include="..\Lib\encodings\utf_8_sig.py">
       <Filter>Python Files</Filter>
     </None>
     <None Include="..\Lib\io.py">
