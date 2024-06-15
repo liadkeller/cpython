@@ -501,6 +501,9 @@
     <None Include="..\Lib\runpy.py">
       <Filter>Python Files</Filter>
     </None>
+    <None Include="..\Lib\socket.py">
+      <Filter>Python Files</Filter>
+    </None>
     <None Include="..\Lib\__hello__.py">
       <Filter>Python Files</Filter>
     </None>

@@ -1126,6 +1126,7 @@ FROZEN_FILES_IN = \
 		Lib/importlib/util.py \
 		Lib/importlib/machinery.py \
 		Lib/runpy.py \
+		Lib/socket.py \
 		Lib/__hello__.py \
 		Lib/__phello__/__init__.py \
 		Lib/__phello__/ham/__init__.py \
@@ -1155,6 +1156,7 @@ FROZEN_FILES_OUT = \
 		Python/frozen_modules/importlib.util.h \
 		Python/frozen_modules/importlib.machinery.h \
 		Python/frozen_modules/runpy.h \
+		Python/frozen_modules/socket.h \
 		Python/frozen_modules/__hello__.h \
 		Python/frozen_modules/__phello__.h \
 		Python/frozen_modules/__phello__.ham.h \
@@ -1239,6 +1241,9 @@ Python/frozen_modules/importlib.machinery.h: Lib/importlib/machinery.py $(FREEZE
 Python/frozen_modules/runpy.h: Lib/runpy.py $(FREEZE_MODULE_DEPS)
 	$(FREEZE_MODULE) runpy $(srcdir)/Lib/runpy.py Python/frozen_modules/runpy.h
 
+Python/frozen_modules/socket.h: Lib/socket.py $(FREEZE_MODULE_DEPS)
+	$(FREEZE_MODULE) socket $(srcdir)/Lib/socket.py Python/frozen_modules/socket.h
+
 Python/frozen_modules/__hello__.h: Lib/__hello__.py $(FREEZE_MODULE_DEPS)
 	$(FREEZE_MODULE) __hello__ $(srcdir)/Lib/__hello__.py Python/frozen_modules/__hello__.h
 
@@ -1296,6 +1301,7 @@ $(DEEPFREEZE_C): $(DEEPFREEZE_DEPS)
 	Python/frozen_modules/importlib.util.h:importlib.util \
 	Python/frozen_modules/importlib.machinery.h:importlib.machinery \
 	Python/frozen_modules/runpy.h:runpy \
+	Python/frozen_modules/socket.h:socket \
 	Python/frozen_modules/__hello__.h:__hello__ \
 	Python/frozen_modules/__phello__.h:__phello__ \
 	Python/frozen_modules/__phello__.ham.h:__phello__.ham \

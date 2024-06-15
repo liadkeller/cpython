@@ -76,6 +76,9 @@ FROZEN = [
         "importlib.machinery",
         "runpy",
     ]),
+    ('frozen packages beyond startup', [
+        'socket',
+    ]),
     (TESTS_SECTION, [
         '__hello__',
         '__hello__ : __hello_alias__',

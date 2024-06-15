@@ -62,6 +62,7 @@
 #include "frozen_modules/importlib.util.h"
 #include "frozen_modules/importlib.machinery.h"
 #include "frozen_modules/runpy.h"
+#include "frozen_modules/socket.h"
 #include "frozen_modules/__hello__.h"
 #include "frozen_modules/__phello__.h"
 #include "frozen_modules/__phello__.ham.h"
@@ -96,6 +97,7 @@ extern PyObject *_Py_get_stat_toplevel(void);
 extern PyObject *_Py_get_importlib_util_toplevel(void);
 extern PyObject *_Py_get_importlib_machinery_toplevel(void);
 extern PyObject *_Py_get_runpy_toplevel(void);
+extern PyObject *_Py_get_socket_toplevel(void);
 extern PyObject *_Py_get___hello___toplevel(void);
 extern PyObject *_Py_get___hello___toplevel(void);
 extern PyObject *_Py_get___hello___toplevel(void);
@@ -141,6 +143,9 @@ static const struct _frozen stdlib_modules[] = {
     {"importlib.util", _Py_M__importlib_util, (int)sizeof(_Py_M__importlib_util), false},
     {"importlib.machinery", _Py_M__importlib_machinery, (int)sizeof(_Py_M__importlib_machinery), false},
     {"runpy", _Py_M__runpy, (int)sizeof(_Py_M__runpy), false},
+
+    /* frozen packages beyond startup */
+    {"socket", _Py_M__socket, (int)sizeof(_Py_M__socket), false},
     {0, 0, 0} /* stdlib sentinel */
 };
 static const struct _frozen test_modules[] = {

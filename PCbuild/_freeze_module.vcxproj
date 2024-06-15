@@ -354,6 +354,11 @@
       <IntFile>$(IntDir)runpy.g.h</IntFile>
       <OutFile>$(PySourcePath)Python\frozen_modules\runpy.h</OutFile>
     </None>
+    <None Include="..\Lib\socket.py">
+      <ModName>socket</ModName>
+      <IntFile>$(IntDir)socket.g.h</IntFile>
+      <OutFile>$(PySourcePath)Python\frozen_modules\socket.h</OutFile>
+    </None>
     <None Include="..\Lib\__hello__.py">
       <ModName>__hello__</ModName>
       <IntFile>$(IntDir)__hello__.g.h</IntFile>
@@ -448,6 +453,7 @@
 		 "$(PySourcePath)Python\frozen_modules\importlib.util.h:importlib.util" ^
 		 "$(PySourcePath)Python\frozen_modules\importlib.machinery.h:importlib.machinery" ^
 		 "$(PySourcePath)Python\frozen_modules\runpy.h:runpy" ^
+		 "$(PySourcePath)Python\frozen_modules\socket.h:socket" ^
 		 "$(PySourcePath)Python\frozen_modules\__hello__.h:__hello__" ^
 		 "$(PySourcePath)Python\frozen_modules\__phello__.h:__phello__" ^
 		 "$(PySourcePath)Python\frozen_modules\__phello__.ham.h:__phello__.ham" ^
