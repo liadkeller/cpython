@@ -46,6 +46,10 @@
 #include "frozen_modules/zipimport.h"
 #include "frozen_modules/abc.h"
 #include "frozen_modules/codecs.h"
+#include "frozen_modules/encodings.h"
+#include "frozen_modules/encodings.aliases.h"
+#include "frozen_modules/encodings.cp1252.h"
+#include "frozen_modules/encodings.utf_8.h"
 #include "frozen_modules/io.h"
 #include "frozen_modules/_collections_abc.h"
 #include "frozen_modules/_sitebuiltins.h"
@@ -74,13 +78,18 @@ extern PyObject *_Py_get_importlib__bootstrap_external_toplevel(void);
 extern PyObject *_Py_get_zipimport_toplevel(void);
 extern PyObject *_Py_get_abc_toplevel(void);
 extern PyObject *_Py_get_codecs_toplevel(void);
+extern PyObject *_Py_get_encodings_toplevel(void);
+extern PyObject *_Py_get_encodings_toplevel(void);
+extern PyObject *_Py_get_encodings_aliases_toplevel(void);
+extern PyObject *_Py_get_encodings_cp1252_toplevel(void);
+extern PyObject *_Py_get_encodings_utf_8_toplevel(void);
 extern PyObject *_Py_get_io_toplevel(void);
 extern PyObject *_Py_get__collections_abc_toplevel(void);
 extern PyObject *_Py_get__sitebuiltins_toplevel(void);
 extern PyObject *_Py_get_genericpath_toplevel(void);
 extern PyObject *_Py_get_ntpath_toplevel(void);
 extern PyObject *_Py_get_posixpath_toplevel(void);
-extern PyObject *_Py_get_posixpath_toplevel(void);
+extern PyObject *_Py_get_ntpath_toplevel(void);
 extern PyObject *_Py_get_os_toplevel(void);
 extern PyObject *_Py_get_site_toplevel(void);
 extern PyObject *_Py_get_stat_toplevel(void);
@@ -110,6 +119,11 @@ static const struct _frozen stdlib_modules[] = {
     /* stdlib - startup, without site (python -S) */
     {"abc", _Py_M__abc, (int)sizeof(_Py_M__abc), false},
     {"codecs", _Py_M__codecs, (int)sizeof(_Py_M__codecs), false},
+    {"encodings", _Py_M__encodings, (int)sizeof(_Py_M__encodings), true},
+    {"encodings.__init__", _Py_M__encodings, (int)sizeof(_Py_M__encodings), false},
+    {"encodings.aliases", _Py_M__encodings_aliases, (int)sizeof(_Py_M__encodings_aliases), false},
+    {"encodings.cp1252", _Py_M__encodings_cp1252, (int)sizeof(_Py_M__encodings_cp1252), false},
+    {"encodings.utf_8", _Py_M__encodings_utf_8, (int)sizeof(_Py_M__encodings_utf_8), false},
     {"io", _Py_M__io, (int)sizeof(_Py_M__io), false},
 
     /* stdlib - startup, with site */
@@ -118,7 +132,7 @@ static const struct _frozen stdlib_modules[] = {
     {"genericpath", _Py_M__genericpath, (int)sizeof(_Py_M__genericpath), false},
     {"ntpath", _Py_M__ntpath, (int)sizeof(_Py_M__ntpath), false},
     {"posixpath", _Py_M__posixpath, (int)sizeof(_Py_M__posixpath), false},
-    {"os.path", _Py_M__posixpath, (int)sizeof(_Py_M__posixpath), false},
+    {"os.path", _Py_M__ntpath, (int)sizeof(_Py_M__ntpath), false},
     {"os", _Py_M__os, (int)sizeof(_Py_M__os), false},
     {"site", _Py_M__site, (int)sizeof(_Py_M__site), false},
     {"stat", _Py_M__stat, (int)sizeof(_Py_M__stat), false},
@@ -150,7 +164,8 @@ const struct _frozen *_PyImport_FrozenTest = test_modules;
 static const struct _module_alias aliases[] = {
     {"_frozen_importlib", "importlib._bootstrap"},
     {"_frozen_importlib_external", "importlib._bootstrap_external"},
-    {"os.path", "posixpath"},
+    {"encodings.__init__", "<encodings"},
+    {"os.path", "ntpath"},
     {"__hello_alias__", "__hello__"},
     {"__phello_alias__", "__hello__"},
     {"__phello_alias__.spam", "__hello__"},
