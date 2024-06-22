@@ -225,7 +225,7 @@ dl_funcptr _PyImport_FindSharedFuncptrWindows(const char *prefix,
                                               PyObject *pathname, FILE *fp)
 {
     dl_funcptr p;
-    char funcname[258], *import_python;
+    char funcname[258], modulename[100], *import_python;
 
 #ifdef Py_ENABLE_SHARED
     _Py_CheckPython3();
@@ -239,6 +239,7 @@ dl_funcptr _PyImport_FindSharedFuncptrWindows(const char *prefix,
 
     {
         HINSTANCE hDLL = NULL;
+        BOOL bSuccess;
 #ifdef MS_WINDOWS_DESKTOP
         unsigned int old_mode;
 
@@ -250,10 +251,10 @@ dl_funcptr _PyImport_FindSharedFuncptrWindows(const char *prefix,
            to avoid DLL preloading attacks and enable use of the
            AddDllDirectory function. We add SEARCH_DLL_LOAD_DIR to
            ensure DLLs adjacent to the PYD are preferred. */
+        PyOS_snprintf(modulename, sizeof(modulename), "%.98s%.2s", shortname, PYD_DEBUG_SUFFIX);
+
         Py_BEGIN_ALLOW_THREADS
-        hDLL = LoadLibraryExW(wpathname, NULL,
-                              LOAD_LIBRARY_SEARCH_DEFAULT_DIRS |
-                              LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR);
+        bSuccess = GetModuleHandleExA(0, modulename, &hDLL);
         Py_END_ALLOW_THREADS
         PyMem_Free(wpathname);
 
@@ -262,7 +263,7 @@ dl_funcptr _PyImport_FindSharedFuncptrWindows(const char *prefix,
         SetErrorMode(old_mode);
 #endif
 
-        if (hDLL==NULL){
+        if (bSuccess == FALSE || hDLL == NULL){
             PyObject *message;
             unsigned int errorCode;
 
