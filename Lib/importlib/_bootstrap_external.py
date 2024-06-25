@@ -1705,53 +1705,53 @@ class FileFinder:
     def __repr__(self):
         return f'FileFinder({self.path!r})'
 
-class ModuleFinder(FileFinder):
+
+class ModuleFinder:
     LOADED_MODULES = [
         '_socket_d.pyd'
     ]
-
-    def _get_resource_spec(self, loader_class, fullname, path, smsl, target):
-        _bootstrap._verbose_message('Called _get_resource_spec for {} {}', fullname, path, verbosity=2)
-        loader = loader_class(fullname, path)
-        return spec_from_file_location(fullname, location=None, loader=loader,
-                                       submodule_search_locations=smsl)
-
-    def find_spec(self, fullname, target=None):
-        """Try to find a spec for the specified module.
-
-        Returns the matching spec, or None if not found.
-        """
-        _bootstrap._verbose_message('importing module {} with self.path={}', fullname, self.path)
-        tail_module = fullname.rpartition('.')[2]
-        for suffix, loader_class in self._loaders:
-            module_name = tail_module + suffix
-            if not module_name in self.LOADED_MODULES:
-                continue
-            try:
-                full_path = _path_join(self.path, module_name)
-            except ValueError:
-                return None
-            return self._get_resource_spec(loader_class, fullname, full_path,
-                                            None, target)
     
     @classmethod
-    def path_hook(cls, *loader_details):
-        """A class method which returns a closure to use on sys.path_hook
-        which will return an instance using the specified loaders and the path
-        called on the closure.
+    def _get_spec(cls, fullname, path, target=None):
+        """Find the loader or namespace_path for this module/package name."""
+        tail_module = fullname.rpartition('.')[2]
 
-        If the path called on the closure is not a directory, ImportError is
-        raised.
+        for loader_class, suffixes in _get_supported_file_loaders():
+            for suffix in suffixes:
+                module_name = tail_module + suffix
+                if not module_name in cls.LOADED_MODULES:
+                    continue
+            
+                loader = loader_class(fullname, path=module_name)
+                _bootstrap._verbose_message('Calls spec_from_file_location for {}', fullname, verbosity=2)
+                return spec_from_file_location(fullname, location=None, loader=loader,
+                                               submodule_search_locations=None)
 
+        return None
+
+    @classmethod
+    def find_spec(cls, fullname, path=None, target=None):
+        """Try to find a spec for 'fullname' on sys.path or 'path'.
+
+        The search is based on sys.path_hooks and sys.path_importer_cache.
         """
-        def path_hook_for_ModuleFinder(path):
-            """Path hook for importlib.machinery.FileFinder."""
-            if not _path_isdir(path):
-                raise ImportError('only directories are supported', path=path)
-            _bootstrap._verbose_message('ModuleFinder path_hook with path {}', path)
-            return cls(path, *loader_details)
-
-        return path_hook_for_ModuleFinder
+        if path is None:
+            path = sys.path
+        spec = cls._get_spec(fullname, path, target)
+        if spec is None:
+            return None
+        elif spec.loader is None:
+            namespace_path = spec.submodule_search_locations
+            if namespace_path:
+                # We found at least one namespace path.  Return a spec which
+                # can create the namespace package.
+                spec.origin = None
+                spec.submodule_search_locations = _NamespacePath(fullname, namespace_path, cls._get_spec)
+                return spec
+            else:
+                return None
+        else:
+            return spec
 
 
 # Import setup ###############################################################
@@ -1801,6 +1801,6 @@ def _install(_bootstrap_module):
     """Install the path-based import components."""
     _set_bootstrap_module(_bootstrap_module)
     supported_loaders = _get_supported_file_loaders()
-    sys.path_hooks.extend([ModuleFinder.path_hook(*supported_loaders),
-                           FileFinder.path_hook(*supported_loaders)])
+    sys.path_hooks.extend([FileFinder.path_hook(*supported_loaders)])
     sys.meta_path.append(PathFinder)
+    sys.meta_path.append(ModuleFinder)
