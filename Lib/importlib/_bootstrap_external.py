@@ -1708,7 +1708,8 @@ class FileFinder:
 
 class ModuleFinder:
     LOADED_MODULES = [
-        '_socket_d.pyd'
+        '_socket_d.pyd',
+        'select_d.pyd'
     ]
     
     @classmethod
